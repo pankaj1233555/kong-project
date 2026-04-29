@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  kong:
+    image: kong:3.0
+    container_name: kong
+    environment:
+      KONG_DATABASE: "off"
+      KONG_DECLARATIVE_CONFIG: /kong/kong.yaml
+    volumes:
+      - ./kong.yaml:/kong/kong.yaml
+    ports:
+      - "8000:8000"
+      - "8001:8001"
