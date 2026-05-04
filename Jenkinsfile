@@ -3,12 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Clone Code') {
-            steps {
-                git 'https://github.com/your-repo/kong-project.git'
-            }
-        }
-
         stage('Deploy Kong') {
             steps {
                 sh 'docker-compose down'
